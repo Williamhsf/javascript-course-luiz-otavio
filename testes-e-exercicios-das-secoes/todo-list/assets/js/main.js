@@ -20,11 +20,25 @@ function limpaInput() {
   inputTarefa.focus();
 }
 
+//vamos criar o botão apagar
+function criaBotaoApagar(li) {
+  //criando botao apagar dentro da .li
+  const botaoApagar = document.createElement('button');
+  //texto dentro do botao
+  botaoApagar.innerText = 'Apagar';
+  //chamando o botao dentro da lista
+  li.appendChild(botaoApagar);
+  //dando uma classe para esse botao e dizendo o que ele vai fazer
+  botaoApagar.setAttribute('class','apagar');
+  botaoApagar.setAttribute('title','apagar este botao');
+}
+
 function criaTarefa(textoInput) {
   const li = criaLi();
   li.innerText = textoInput;
   tarefas.appendChild(li);
   limpaInput();
+  criaBotaoApagar(li);
 }
 
 btnTarefa.addEventListener('click', function() {
@@ -32,9 +46,21 @@ btnTarefa.addEventListener('click', function() {
   criaTarefa(inputTarefa.value);
 });
 
-//vamos inserir o botão apagar
-
-
-  
-  
+//verificando botoes clicados
+/* document.addEventListener('click', function (e) {
+    const el = e.target;
+    console.log(el);
+});*/
  
+ //pegando o target do botao apagar
+document.addEventListener('click', function (e) {
+  const el = e.target;
+  
+  if(el.classList.contains('apagar')){
+    // console.log('apagar clicado');
+    //removendo PAI
+    el.parentElement.remove();
+  }
+});
+
+//proxima sessao salvar lista

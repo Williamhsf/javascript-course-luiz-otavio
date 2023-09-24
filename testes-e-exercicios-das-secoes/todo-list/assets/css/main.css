@@ -21,14 +21,26 @@ body {
 }
 
 .container {
-  max-width: 640px;
+  max-width: 480px;
   margin: 50px auto;
   background-color: #FFF;
   padding: 20px;
   border-radius: 1rem;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 2rem;
 }
 
 ul {
   list-style-type: none;
   margin-left: 0.5rem;
+}
+
+li {
+  border: .1rem solid red;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
