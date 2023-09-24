@@ -63,4 +63,4 @@ document.addEventListener('click', function (e) {
   }
 });
 
-//proxima sessao salvar lista
+//proxima secao salvar lista
