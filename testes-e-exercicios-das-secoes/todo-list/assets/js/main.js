@@ -39,6 +39,7 @@ function criaTarefa(textoInput) {
   tarefas.appendChild(li);
   limpaInput();
   criaBotaoApagar(li);
+  salvaTarefas();
 }
 
 btnTarefa.addEventListener('click', function() {
@@ -64,3 +65,43 @@ document.addEventListener('click', function (e) {
 });
 
 //proxima secao salvar lista
+function salvaTarefas() {
+  const liTarefas = tarefas.querySelectorAll('li');
+  const listaDeTarefas = [];
+
+  //tudo o que for tarefa
+  for (let tarefa of liTarefas) {
+    let tarefaTexto = tarefa.innerText; //criando uma variável para receber o conteúdo
+    //substituindo o nome Apagar por nada
+    tarefaTexto = tarefaTexto.replace('Apagar', '').trim(); 
+    listaDeTarefas.push(tarefaTexto);
+  }
+  //convertendo dados(JSON) e usando o logalStorage para uma base de dados
+  const tarefasJSON = JSON.stringify(listaDeTarefas);
+  localStorage.setItem('tarefas', tarefasJSON);
+}
+
+//apagando dados(localStorage)
+document.addEventListener('click', function(e) {
+  const el = e.target;
+
+  if (el.classList.contains('apagar')) {
+    el.parentElement.remove();
+    salvaTarefas();
+  }
+});
+
+//função que ler as tarefas e joga para a UL
+function adicionarTarefaSalvas() {
+  //pegando item por item
+  const tarefas = localStorage.getItem('tarefas');
+  //convertendo pra array
+  const listaDeTarefas = JSON.parse(tarefas)
+  
+  //mantendo salva a tarefa
+  for (let tarefa of listaDeTarefas) {
+    criaTarefa(tarefa);
+  }
+}
+
+adicionarTarefaSalvas();

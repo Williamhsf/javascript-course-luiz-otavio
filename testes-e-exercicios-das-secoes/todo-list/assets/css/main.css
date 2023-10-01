@@ -39,7 +39,6 @@ ul {
 }
 
 li {
-  border: .1rem solid red;
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
