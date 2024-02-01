@@ -17,7 +17,7 @@ function criaCalculadora() {
     },
 
     realizaConta() {
-      let conta = this.display.value;
+      let conta = this.display.value
 
       try {
         conta = eval(conta);
