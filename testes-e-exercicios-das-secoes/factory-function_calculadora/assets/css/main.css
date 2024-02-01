@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap');
 
 :root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(15, 55, 65);
-  font-size: 62,5%;
+  --grey-1: #393838;
+  --grey-2: #595656;
+  --grey-3: #D9D9D9;
+
+  --black: #030303;
+  --orange: #FFD39F;
+  --yellow: #FDFF97;
+
+  font-size: 62.5%;
 }
 
 * {
@@ -14,89 +20,93 @@
 }
 
 body {
-  background-color: var(--primary-color);
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.5em;
+  width: 100%;
+  height: 100vh;
+  
+  background-color: var(--grey-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  /* font-family: 'Orbitron', sans-serif; */
+  
 }
 
 .container {
-  max-width: 450px;
-  margin: 50px auto;
-  background-color: #FFF;
-  padding: 20px;
-  border-radius: 1rem;
-  
+  max-width: 45rem;
+  border: 0.4rem solid var(--black);
+  border-radius: 2rem;
+  padding: 1rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
 }
 
-/* form input,
-form label,
-form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 0.1rem;
-}
-
-form input {
+.container h1 {
+  font-family: 'Roboto', sans-serif;
   font-size: 2.4rem;
-  height: 5rem;
-  padding: 0 2rem;
+  margin-bottom: 1rem;
+  color: var(--grey-3);
 }
-
-form input:focus {
-  outline: 0.1rem solid var(--primary-color);
-}
-
-form button {
-  margin-top: 1rem;
-  border: none;
-  background-color: var(--primary-color);
-  color: #FFF;
-  font-size: 1.8rem;
-  font-weight: 700;
-  height: 5rem;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: var(--primary-color-darker);
-} */
 
 .calculadora {
-  width: 400px;
+  width: 26rem;
 }
 
 .display {
-  font-size: 2em;
   width: 100%;
+  height: 5rem;
+  background-color: var(--grey-1);
+  border: 0;
+  padding-right: 1rem;
+  font-size: 3.6rem;
+  color: var(--grey-3);
   text-align: right;
-  margin-bottom: 10px;
-  padding-right: 5px;
+  margin-bottom: 1rem;
+}
+
+tr {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .btn {
-  width: 100%;
-  height: 40px;
-  font-size: 1em;
+  width: 5rem;
+  height: 5rem;
+  
+  background-color: var(--grey-2);
+  border-radius: 1rem;
   border: none;
-  background: #dfdfdf;
-
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--grey-3);
+  
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #9e9e9e;
+  background-color: #9E9E9E;
+}
+
+.operator {
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+.operator:hover {
+  background-color: #F7AA53;
 }
 
 .btn-eq {
-  background-color: #4169e1;
-  color: #FFF;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-size: 3.2rem;
 }
 
 .btn-eq:hover {
-  background-color: #2549b8;
+  background-color: #DDDF78;
 }

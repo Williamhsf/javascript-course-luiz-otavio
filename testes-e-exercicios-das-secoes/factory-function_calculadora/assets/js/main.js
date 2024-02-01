@@ -8,16 +8,18 @@ function criaCalculadora() {
       this.pressionaEnter();
     },
 
+    //envio com enter
     pressionaEnter() {
       this.display.addEventListener('keyup', e => {
         if (e.keyCode === 13) {
-          this.realizaConta();
+          this.realizandoConta();
         }
       });
     },
-
-    realizaConta() {
-      let conta = this.display.value
+   
+    //realizando operacoes
+    realizandoConta() {
+      let conta = this.display.value;
 
       try {
         conta = eval(conta);
@@ -42,9 +44,8 @@ function criaCalculadora() {
       this.display.value = this.display.value.slice(0, -1);
     },
 
-
+    //evento
     cliqueBotoes() {
-      // this -> calculadora
       document.addEventListener('click', e => {
         const el = e.target;
 
@@ -52,16 +53,19 @@ function criaCalculadora() {
           this.btnParaDisplay(el.innerText);
         }
 
+        //limpar
         if(el.classList.contains('btn-clear')) {
           this.clearDisplay();
         }
 
+        //apagar um
         if(el.classList.contains('btn-del')) {
           this.apagaUm();
         }
 
+        //igual
         if(el.classList.contains('btn-eq')) {
-          this.realizaConta();
+          this.realizandoConta();
         }
       });
     },
@@ -69,7 +73,8 @@ function criaCalculadora() {
     btnParaDisplay(valor) {
       this.display.value += valor;
     }
-  };
+
+  }
 }
 
 const calculadora = criaCalculadora();
