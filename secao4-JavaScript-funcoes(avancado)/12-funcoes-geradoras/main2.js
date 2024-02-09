@@ -9,6 +9,8 @@ function* geradora1() {
   yield 'valor 3';
 }
 
+// usando um for nós iremos iterar o objeto(g1), mostrando 
+// todos os valores
 const g1 = geradora1();
 for(let valor of g1){
   console.log(valor);

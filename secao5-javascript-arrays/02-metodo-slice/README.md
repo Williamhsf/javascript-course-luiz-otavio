@@ -1,0 +1,1 @@
+Ajuda quando quero movimentar algo no meio da array
